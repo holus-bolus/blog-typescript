@@ -1,23 +1,22 @@
-import classes from "./BlogPosts.module.css";
-import SinglePost from "../SinglePost/SinglePost.tsx";
+import classes from './BlogPosts.module.css';
+import SinglePost from '../SinglePost/SinglePost.tsx';
+import React from 'react';
+import { useAppSelector } from '../../hooks/hooks.ts';
 
-const BlogPosts = () => {
-
-    const posts = [
-        {title: "Post title 1", text: "Post text 1"},
-        {title: "Post title 2", text: "Post text 2"},
-        {title: "Post title 3", text: "Post text 3"},
-    ]
-    return (
-        <div>
-            <h2 className={classes.heading}>Blog posts</h2>
-            <ul>
-                {posts.map(post => {
-                    return <SinglePost title={post.title} text={post.text}/>
-                })}
-            </ul>
-        </div>
-    );
+const BlogPosts: React.FC = () => {
+  const posts = useAppSelector((state) => state.posts.posts);
+  return (
+    <div>
+      <h2 className={classes.heading}>Blog posts</h2>
+      <ul>
+        {posts.map((post) => {
+          return (
+            <SinglePost key={post.id} title={post.title} text={post.text} />
+          );
+        })}
+      </ul>
+    </div>
+  );
 };
 
 export default BlogPosts;

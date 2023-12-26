@@ -1,12 +1,14 @@
-import './App.css'
-import BlogPosts from "./components/BlogPosts/BlogPosts.tsx";
+import './App.css';
+import BlogPosts from './components/BlogPosts/BlogPosts.tsx';
+import NewPost from './components/NewPost/NewPost.tsx';
 
 function App() {
-    return (
-        <>
-            <BlogPosts/>
-        </>
-    )
+  return (
+    <>
+      <NewPost />
+      <BlogPosts />
+    </>
+  );
 }
 
-export default App
+export default App;
