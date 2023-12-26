@@ -38,14 +38,18 @@ const SinglePost: React.FC<PostItemProps> = ({ todo }) => {
           />
           <input
             type="text"
-            className="form-control mr-3"
+            className="form-control"
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
         </>
       ) : (
-        <span>{todo.text}</span>
+        <>
+          <h4>{todo.title}</h4>
+          <p>{todo.text}</p>
+        </>
       )}
+
       <div>
         <button className="btn btn-secondary mr-2" onClick={handleEdit}>
           {isEditing ? 'Save' : 'Edit'}
