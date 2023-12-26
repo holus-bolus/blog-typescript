@@ -1,0 +1,14 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation__list {
+}
+
+.navigation__item {
+}
+
+.navigation__link {
+}
