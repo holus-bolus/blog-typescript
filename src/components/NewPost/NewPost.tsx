@@ -1,4 +1,3 @@
-import classes from './NewPost.module.css';
 import { useState } from 'react';
 import React from 'react';
 import { useDispatch } from 'react-redux';
@@ -21,28 +20,36 @@ const NewPost: React.FC = () => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input
-            className={classes.titleInput}
-            type="text"
-            name="post-title"
-            id="post-title"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-            placeholder={'Enter the post title'}
-          />
-        </label>
+      <form onSubmit={handleSubmit} className={'mb-4'}>
+        <div className="input-group">
+          <label>
+            <input
+              className={'form-control'}
+              type="text"
+              name="post-title"
+              id="post-title"
+              value={title}
+              onChange={(event) => setTitle(event.target.value)}
+              placeholder={'Enter the post title'}
+            />
+          </label>
+        </div>
         <label>
           <textarea
             name="post-text"
             id="post-text"
+            className={'form-control'}
             value={text}
             onChange={(event) => setPostText(event.target.value)}
             placeholder={'Enter the post text'}
+            style={{ resize: 'none' }}
           />
         </label>
-        <button type="submit">Submit</button>
+        <div className="input-group-append">
+          <button type="submit" className={'btn btn-primary'}>
+            Submit
+          </button>
+        </div>
       </form>
     </>
   );

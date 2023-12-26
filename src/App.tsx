@@ -4,10 +4,10 @@ import NewPost from './components/NewPost/NewPost.tsx';
 
 function App() {
   return (
-    <>
+    <div className={'container py-5'}>
       <NewPost />
       <BlogPosts />
-    </>
+    </div>
   );
 }
 
