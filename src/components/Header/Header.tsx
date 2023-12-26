@@ -29,6 +29,11 @@ const Header = () => {
               Contact
             </NavLink>
           </li>
+          <li className="nav-item">
+            <NavLink to={'/create-post'} className="nav-link">
+              Create post
+            </NavLink>
+          </li>
         </ul>
       </nav>
       <label>

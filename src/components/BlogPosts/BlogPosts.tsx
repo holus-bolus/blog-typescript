@@ -8,9 +8,11 @@ const BlogPosts: React.FC = () => {
     <div>
       <h2>Blog posts</h2>
       <ul className={'list-group'}>
-        {posts.map((post) => {
-          return <SinglePost key={post.id} todo={post} />;
-        })}
+        {posts.length === 0 && <p>No posts yet</p>}
+        {posts.length > 0 &&
+          posts.map((post) => {
+            return <SinglePost key={post.id} todo={post} />;
+          })}
       </ul>
     </div>
   );
